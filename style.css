@@ -167,6 +167,7 @@ main .card:nth-child(3) .card__header {
 .card__content_item_action {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .card__content_item_action .active {
