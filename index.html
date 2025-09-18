@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Mini Kanban</title>
+        <link rel="stylesheet" href="./style.css" />
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <h2>Mini Kanban Board</h2>
+                <div>
+                    <button id="add_task" class="btn" onclick="openDialogTask()">Thêm Task</button>
+                    <input class="input" type="text" name="" id="" placeholder="Tìm kiếm task ..." />
+                    <select class="input" name="" id="">
+                        <option value="Tất cả danh mục" disabled selected>Tất cả danh mục</option>
+                    </select>
+                    <button id="theme-toggle" class="btn">Chuyển Dark Mode</button>
+                </div>
+            </header>
+            <main>
+                <div class="card">
+                    <div class="card__header">
+                        <h3 class="card__header_title">To Do</h3>
+                        <span>2</span>
+                    </div>
+                    <div class="card__content">
+                        <div class="card__content_item">
+                            <h4 class="card__content_item_title">Task 1</h4>
+                            <p class="card__content_item_description">Description</p>
+                            <div class="card__content_item_action">
+                                <div class="active">Công việc</div>
+                                <div>
+                                    <button class="edit">Edit</button>
+                                    <button class="delete">Delete</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card__content_item">
+                            <h4 class="card__content_item_title">Task 1</h4>
+                            <p class="card__content_item_description">Description</p>
+                            <div class="card__content_item_action">
+                                <div class="active">Công việc</div>
+                                <div>
+                                    <button class="edit">Edit</button>
+                                    <button class="delete">Delete</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card__header">
+                        <h3 class="card__header_title">In Progress</h3>
+                        <span>2</span>
+                    </div>
+                    <div class="card__content">
+                        <div class="card__content_item">
+                            <h4 class="card__content_item_title">Task 1</h4>
+                            <p class="card__content_item_description">Description</p>
+                            <div class="card__content_item_action">
+                                <div class="active">Công việc</div>
+                                <div>
+                                    <button class="edit">Edit</button>
+                                    <button class="delete">Delete</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card__content_item">
+                            <h4 class="card__content_item_title">Task 1</h4>
+                            <p class="card__content_item_description">Description</p>
+                            <div class="card__content_item_action">
+                                <div class="active">Công việc</div>
+                                <div>
+                                    <button class="edit">Edit</button>
+                                    <button class="delete">Delete</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card__header">
+                        <h3 class="card__header_title">Done</h3>
+                        <span>2</span>
+                    </div>
+                    <div class="card__content">
+                        <div class="card__content_item">
+                            <h4 class="card__content_item_title">Task 1</h4>
+                            <p class="card__content_item_description">Description</p>
+                            <div class="card__content_item_action">
+                                <div class="active">Công việc</div>
+                                <div>
+                                    <button class="edit">Edit</button>
+                                    <button class="delete">Delete</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card__content_item">
+                            <h4 class="card__content_item_title">Task 1</h4>
+                            <p class="card__content_item_description">Description</p>
+                            <div class="card__content_item_action">
+                                <div class="active">Công việc</div>
+                                <div>
+                                    <button class="edit">Edit</button>
+                                    <button class="delete">Delete</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <dialog id="task_dialog">
+            <form class="form_task">
+                <div class="form_task_title">
+                    <h4>Chỉnh sửa task</h4>
+                    <span onclick="closeDialogTask()">&times;</span>
+                </div>
+                <div class="form_task_content">
+                    <div class="form_task_content_input">
+                        <label for="">Tiêu đề *</label>
+                        <input type="text" placeholder="Nhập tiêu đề task ..." />
+                    </div>
+                    <div class="form_task_content_input">
+                        <label for="">Mô tả</label>
+                        <textarea name="" id="" placeholder="Nhập mô tả chi tiết"></textarea>
+                    </div>
+                    <div class="form_task_content_input">
+                        <label for="">Danh mục *</label>
+                        <select name="" id="">
+                            <option value="" disabled selected>Chọn danh mục</option>
+                        </select>
+                    </div>
+                    <div class="form_task_content_input">
+                        <label for="">Trạng thái</label>
+                        <select name="" id="">
+                            <option value="" disabled selected>To do</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form_task_content_action">
+                    <button class="btn" type="button" onclick="closeDialogTask()">Hủy</button>
+                    <button class="btn">Thêm Task</button>
+                </div>
+            </form>
+        </dialog>
+        <script src="./script.js"></script>
+    </body>
+</html>
