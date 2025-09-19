@@ -37,9 +37,10 @@
 body {
     color: var(--text-color);
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     background: linear-gradient(to bottom right, var(--bg-color), var(--bg-secondary-color));
-    overflow-y: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
     font-family: "Poppins", "Helvetica", "Arial", sans-serif;
 }
 
@@ -200,13 +201,14 @@ main .card:nth-child(3) .card__header {
 #task_dialog {
     width: 100vw;
     height: 100vh;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     background: rgba(0, 0, 0, 0.5);
     z-index: 10;
     border: none;
     color: var(--text-color);
+
 }
 #task_dialog .form_task {
     position: absolute;
@@ -275,4 +277,33 @@ main .card:nth-child(3) .card__header {
 .form_task_content_action button:last-child {
     background-color: var(--btn-primary);
     color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+    header > div {
+        flex-direction: column;
+        width: 100%;
+    }
+    header button:first-of-type {
+        width: 100%;
+    }
+    
+    header button:last-of-type {
+        width: 100%;
+    }
+    header input, header select{
+        max-width: 100% !important;
+    }
+    .form_task {
+        width: 350px !important;
+    }
 }
